@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunrise Ridge Golden Retrievers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom,#a13c1d,#f7e3b6);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/header.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #8b3d1a;
+    }
+    nav {
+      background-color: #d87b4c;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 101;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color:#ffd1a4; }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      color:#ffb84d;
+      text-shadow:1px 1px #8b3d1a;
+      margin-bottom:20px;
+    }
+    .highlight {
+      background: linear-gradient(to bottom,#ffd1a4,#f7e3b6);
+      padding: 40px;
+      text-align: center;
+      border-radius: 12px;
+      color: #3b1f0b;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    }
+    .about-text { color:#5b3d1f; line-height:1.7; }
+    .collapsible {
+      background: linear-gradient(to right,#fff1d6,#ffd1a4);
+      color: #3b1f0b;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    .active, .collapsible:hover { background: linear-gradient(to right,#ffd1a4,#f7e3b6);}
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      padding: 0 18px;
+      background-color: #fff8e6;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      color: #3b1f0b;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+    .content-inner { padding: 20px 0; }
+    .puppy-grid, .parent-grid, .litter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .puppy-card, .parent-card, .litter-card {
+      padding: 15px;
+      border-radius: 12px;
+      background-color:#fff1d6;
+      box-shadow:2px 2px 8px rgba(0,0,0,0.15);
+      text-align:center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .puppy-card:hover, .parent-card:hover, .litter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    }
+    .puppy-card img, .parent-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .footer {
+      background-color: #d87b4c;
+      color:white;
+      text-align:center;
+      padding:25px;
+    }
+    p, li { line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sunrise Ridge Golden Retrievers</h1>
+  <p>Home-Raised Puppies in a Family-Friendly Environment</p>
+</header>
+
+<nav>
+  <a href="#about-us">About Us</a>
+  <a href="#available-puppies">Available Puppies</a>
+  <a href="#meet-parents">Meet the Parents</a>
+  <a href="#upcoming-litters">Upcoming Litters</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="highlight" id="welcome">
+  <h2>Welcome</h2>
+  <p>At Sunrise Ridge, located in the Southern Black Hills of South Dakota, our Golden Retriever puppies grow up with children in the house and are carefully trained to be well-behaved, friendly, and loving companions. Our focus is on producing puppies ready for family life who thrive in a nurturing, attentive environment.</p>
+</section>
+
+<section id="about-us">
+  <h2 style="color:#ffcc66;">About Us</h2>
+  <p class="about-text">
+    We are a small, family-run breeder in the Southern Black Hills of South Dakota. With years of experience as a veterinary technician, we are passionate about raising healthy, happy Golden Retrievers who become cherished family members.  
+    Our dogs enjoy playful activities and close family interaction. We strive to improve the breed through careful parent selection and raising puppies in a loving, social, and well-trained environment.
+  </p>
+</section>
+
+<section id="available-puppies">
+  <button class="collapsible">Available Puppies</button>
+  <div class="content">
+    <div class="content-inner">
+      <div class="puppy-grid" id="puppy-grid"></div>
+      <p>Contact us to learn more about availability and reserve your puppy!</p>
+    </div>
+  </div>
+</section>
+
+<section id="meet-parents">
+  <button class="collapsible">Meet the Parents</button>
+  <div class="content">
+    <div class="content-inner">
+      <div class="parent-grid" id="parent-grid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="upcoming-litters">
+  <button class="collapsible">Upcoming Litters</button>
+  <div class="content">
+    <div class="content-inner">
+      <div class="litter-grid" id="litter-grid">
+        <div class="litter-card">
+          <h3>Expected Litter: MM/YYYY</h3>
+          <p>Mother: Daisey | Father: Denver</p>
+          <p>Anticipated 6-8 puppies, raised in our family-friendly home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: Sunriseridgegoldenretrievers@yahoo.com</p>
+  <p>Phone: (605) 360-5636</p>
+</section>
+
+<div class="footer">
+  <p>© 2026 Sunrise Ridge Golden Retrievers</p>
+</div>
+
+<script>
+  // Collapsible sections
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(button => {
+    button.addEventListener("click", function() {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+
+  // Dynamic image loader
+  const puppyGrid = document.getElementById('puppy-grid');
+  const parentGrid = document.getElementById('parent-grid');
+
+  // Puppies
+  for(let i=1; i<=12; i++){
+    const card = document.createElement('div');
+    card.className = 'puppy-card';
+    card.innerHTML = `
+      <img src="images/puppy${i}.jpg" alt="Puppy ${i}">
+      <h3>Puppy Name ${i}</h3>
+      <p>Born: MM/DD/YYYY | Gender: Male/Female</p>
+    `;
+    puppyGrid.appendChild(card);
+  }
+
+  // Parents
+  const parents = [
+    {name:'Daisey', role:'Mother', img:'images/mother.jpg', desc:'Age: 2 years | Temperament: Loving and playful, enjoys family time and activities.'},
+    {name:'Denver', role:'Father', img:'images/father.jpg', desc:'Age: 2 years | Temperament: Confident, friendly, loves children, enjoys playtime.'}
+  ];
+  parents.forEach(parent=>{
+    const card = document.createElement('div');
+    card.className = 'parent-card';
+    card.innerHTML = `
+      <img src="${parent.img}" alt="${parent.name}">
+      <h3>${parent.role}: ${parent.name}</h3>
+      <p>${parent.desc}</p>
+    `;
+    parentGrid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
